@@ -1,0 +1,27 @@
+{
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/index.html" }
+  ]
+}
+```
+
+Click **Commit changes** → Vercel auto-redeploys in ~1 minute.
+
+---
+
+## If it still shows 404 after that
+
+The issue might be the **Root Directory** setting in Vercel. Check it:
+
+1. Go to **Vercel dashboard** → your frontend project
+2. **Settings** → **General** → **Root Directory**
+3. Make sure it says `frontend` — if it's blank or wrong, fix it and click **Save**
+4. Go to **Deployments** → **Redeploy**
+
+---
+
+## Also add your Vercel frontend URL to Sanity CORS
+
+Go to **[sanity.io/manage](https://sanity.io/manage)** → project `qb2b9bdq` → **API** → **CORS Origins** → **Add**:
+```
+https://vcspro-workday.vercel.app    ✅ Allow credentials
